@@ -54,22 +54,14 @@ function updateFilters() {
     let filteredData = tableData
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
-    
     function filterValue(row){
       let result = filters[condition] == row[condition]
       return result
     }
 
     for (condition in filters){
-      console.log(condition)
-      console.log(filters[condition])
       filteredData = filteredData.filter(filterValue)
     }
-    
-    //filters.forEach(element => console.log(element));
-    // filteredData.forEach(
-    // row=>{filteredData.filter(row=>row.filterId===filters)
-    // });
 
     // 10. Finally, rebuild the table using the filtered data
     buildTable(filteredData);
